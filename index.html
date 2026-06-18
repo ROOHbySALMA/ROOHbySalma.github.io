@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROOH — Parfums de l'Âme by Salma</title>
+  <meta name="description" content="ROOH — Parfums de l'Âme by Salma. Fragrances inspirées des grandes maisons. Livraison partout au Maroc. 70 DH le flacon 50ML." />
+
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="ROOH — Parfums de l'Âme by Salma" />
+  <meta property="og:description" content="Fragrances inspirées des grandes maisons. Née au Maroc, portée par l'âme. 70 DH · Livraison partout au Maroc." />
+  <meta property="og:image" content="images/bottles-duo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_MA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ROOH — Parfums de l'Âme by Salma" />
+  <meta name="twitter:description" content="Fragrances inspirées des grandes maisons. 70 DH · Livraison partout au Maroc." />
+  <meta name="twitter:image" content="images/bottles-duo.jpg" />
+  <link rel="canonical" href="https://roohbysalma.ma/" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+<!-- MODAL NOTES -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(74,46,26,0.5);z-index:1000;align-items:center;justify-content:center;">
+  <div onclick="event.stopPropagation()" style="background:#FAF6F0;border:0.5px solid #C9A96E;border-radius:8px;padding:40px;max-width:420px;width:90%;text-align:center;position:relative;">
+    <button onclick="closeModal()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;color:#9B8267;cursor:pointer;">✕</button>
+    <img id="modal-photo" class="modal-photo" src="" alt="" />
+    <div id="modal-emoji" style="font-size:24px;margin-bottom:8px;"></div>
+    <div id="modal-name" style="font-size:13px;letter-spacing:3px;color:#4A2E1A;margin-bottom:4px;font-weight:500;"></div>
+    <div id="modal-brand" style="font-size:11px;color:#9B8267;font-style:italic;margin-bottom:6px;"></div><div id="modal-ml" style="font-size:10px;letter-spacing:2px;color:#C9A96E;margin-bottom:20px;"></div>
+    <div style="width:40px;height:0.5px;background:#C9A96E;margin:0 auto 20px;"></div>
+    <div id="modal-notes-title" style="font-size:10px;letter-spacing:3px;color:#C9A96E;margin-bottom:12px;">NOTES OLFACTIVES</div>
+    <div id="modal-notes" style="font-size:13px;color:#7A5C42;line-height:2.2;margin-bottom:24px;"></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;" id="modal-tags"></div>
+    <button id="modal-order-btn" style="margin-top:24px;width:100%;padding:12px;background:#C9A96E;border:none;color:white;font-size:11px;letter-spacing:3px;cursor:pointer;border-radius:2px;font-family:inherit;" onclick="orderFromModal()">COMMANDER</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="ROOH Parfums de l'Âme" /></a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-i18n="nav_accueil">ACCUEIL</a></li>
+    <li><a href="#femme" data-i18n="nav_femme">FEMME</a></li>
+    <li><a href="#homme" data-i18n="nav_homme">HOMME</a></li>
+    <li><a href="#unisex" data-i18n="nav_unisex">UNISEX</a></li>
+    <li><a href="#histoire" data-i18n="nav_histoire">NOTRE HISTOIRE</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">CONTACT</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-switch">العربية</button>
+    <a href="https://www.instagram.com/roohbysalma" target="_blank" class="nav-icon"><i class="ti ti-brand-instagram"></i></a>
+    <a href="https://wa.me/212718668861" target="_blank" class="nav-icon"><i class="ti ti-brand-whatsapp"></i></a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- PROMO BANNER -->
+<div class="promo-banner" data-i18n="promo">
+  🌸 PRIX DE LANCEMENT — 70 DH LE PARFUM · PACK 4 PARFUMS À SEULEMENT 250 DH 🌸
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/logo.png" alt="ROOH" class="hero-logo" />
+  <div class="hero-line"></div>
+  <p class="hero-text" data-i18n="hero_text">Chaque fragrance est une histoire, un souvenir, une émotion. Née au Maroc, portée par l'âme.</p>
+  <div class="hero-photo"><img src="images/bottles-duo.jpg" alt="Flacons ROOH Parfums de l'Âme" /></div>
+  <a href="#femme" class="btn" data-i18n="hero_btn">DÉCOUVRIR LA COLLECTION</a>
+</section>
+
+<!-- COLLECTION FEMME -->
+<section class="section femme-section" id="femme">
+  <div class="section-header">
+    <span class="section-label" data-i18n="femme_label">🌸 COLLECTION FEMME</span>
+    <div class="section-divider"></div>
+  </div>
+  <div class="products-grid" id="grid-femme"></div>
+
+  <div style="margin-top:40px;">
+    <div class="section-header">
+      <span class="section-label" style="color:#C9A96E;">🪐 UNISEX — AUSSI POUR ELLE</span>
+      <div class="section-divider"></div>
+    </div>
+    <div class="products-grid" id="grid-femme-unisex"></div>
+  </div>
+</section>
+
+<!-- COLLECTION UNISEXE -->
+<section class="section unisex-section" id="unisex">
+  <div class="section-header">
+    <span class="section-label" data-i18n="unisex_label">🪐 COLLECTION UNISEXE</span>
+    <div class="section-divider"></div>
+  </div>
+  <p style="font-size:12px;color:var(--brun-light);letter-spacing:1px;margin-bottom:24px;font-style:italic;">Ces fragrances d'exception se portent aussi bien par la femme que par l'homme.</p>
+  <div class="products-grid" id="grid-unisex"></div>
+</section>
+
+<!-- COLLECTION HOMME -->
+<section class="section homme-section" id="homme">
+  <div class="section-header">
+    <span class="section-label" data-i18n="homme_label">🪵 COLLECTION HOMME</span>
+    <div class="section-divider"></div>
+  </div>
+  <div class="products-grid" id="grid-homme"></div>
+
+  <div style="margin-top:40px;">
+    <div class="section-header">
+      <span class="section-label" style="color:#C9A96E;">🪐 UNISEX — AUSSI POUR LUI</span>
+      <div class="section-divider"></div>
+    </div>
+    <div class="products-grid" id="grid-homme-unisex"></div>
+  </div>
+</section>
+
+<!-- PACK -->
+<section class="section pack-section">
+  <div class="pack-box">
+    <div class="pack-tag" data-i18n="pack_tag">OFFRE EXCLUSIVE</div>
+    <div class="pack-title" data-i18n="pack_title">PACK ROOH × 4</div>
+    <p class="pack-desc" data-i18n="pack_desc">Compose ton pack de 4 parfums au choix parmi toutes nos collections. Femme, Homme ou Unisex — à toi de créer ta signature.</p>
+    <div class="pack-prices">
+      <span class="pack-old">320 DH</span>
+      <span class="pack-new">250 DH</span>
+      <span class="pack-save" data-i18n="pack_save">ÉCONOMISE 70 DH</span>
+    </div>
+    <button class="btn btn-gold" onclick="orderPack()" data-i18n="pack_btn">COMPOSER MON PACK</button>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section class="section" id="histoire">
+  <div class="section-header">
+    <span class="section-label" data-i18n="histoire_label">NOTRE HISTOIRE</span>
+    <div class="section-divider"></div>
+  </div>
+  <div class="histoire-grid">
+    <div class="histoire-img histoire-img-logo">
+      <img src="images/logo.png" alt="ROOH — Parfums de l'Âme" class="histoire-logo" />
+    </div>
+    <div class="histoire-text">
+      <h2 data-i18n="histoire_title">L'Âme derrière chaque flacon</h2>
+      <p data-i18n="histoire_text">Depuis toujours, j'avais le rêve d'avoir ma propre marque de parfum, vu mon obsession pour les fragrances — chaque note me porte un souvenir. J'ai choisi chaque note avec prudence et amour pour offrir de très bons parfums inspirés par les grandes maisons. Après le décès de mon père, je fais de mon mieux pour le rendre fier. Chaque note touche l'âme — c'est pour cela que j'ai choisi le nom ROOH. Cette marque est mon hommage, ma passion, mon souffle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LIVRAISON -->
+<section class="section" style="background:var(--beige);">
+  <div class="section-header">
+    <span class="section-label" data-i18n="livraison_label">LIVRAISON & SERVICE</span>
+    <div class="section-divider"></div>
+  </div>
+  <div class="livraison-grid">
+    <div class="livraison-item">
+      <div class="livraison-icon">🚚</div>
+      <div class="livraison-title" data-i18n="liv1_title">LIVRAISON MAROC</div>
+      <div class="livraison-desc" data-i18n="liv1_desc">Partout au Maroc, à domicile</div>
+    </div>
+    <div class="livraison-item">
+      <div class="livraison-icon">💬</div>
+      <div class="livraison-title" data-i18n="liv2_title">COMMANDE FACILE</div>
+      <div class="livraison-desc" data-i18n="liv2_desc">Via WhatsApp ou formulaire en ligne</div>
+    </div>
+    <div class="livraison-item">
+      <div class="livraison-icon">🎁</div>
+      <div class="livraison-title" data-i18n="liv3_title">EMBALLAGE SOIGNÉ</div>
+      <div class="livraison-desc" data-i18n="liv3_desc">Chaque commande emballée avec soin</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-header">
+    <span class="section-label" data-i18n="contact_label">NOUS CONTACTER</span>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 data-i18n="contact_title">Restons en contact</h3>
+      <div class="contact-item"><i class="ti ti-brand-whatsapp contact-icon"></i><a href="https://wa.me/212718668861">+212 718 668 861</a></div>
+      <div class="contact-item"><i class="ti ti-mail contact-icon"></i><a href="mailto:roohbysalma@gmail.com">roohbysalma@gmail.com</a></div>
+      <div class="contact-item"><i class="ti ti-brand-instagram contact-icon"></i><a href="https://www.instagram.com/roohbysalma" target="_blank">@roohbysalma</a></div>
+      <div class="contact-item"><i class="ti ti-map-pin contact-icon"></i><span>Livraison partout au Maroc 🇲🇦</span></div>
+      <div class="qr-block" style="margin-top:24px;">
+        <img src="images/qr-instagram.png" alt="QR Instagram @roohbysalma" />
+        <div class="qr-label">@ROOHBYSALMA</div>
+      </div>
+    </div>
+    <div>
+      <form id="contact-form">
+        <div class="form-group"><label data-i18n="form_name">NOM & PRÉNOM</label><input type="text" id="f-name" required placeholder="Votre nom complet" /></div>
+        <div class="form-group"><label data-i18n="form_phone">TÉLÉPHONE</label><input type="tel" id="f-phone" required placeholder="0600000000" /></div>
+        <div class="form-group"><label data-i18n="form_city">VILLE</label><input type="text" id="f-city" required placeholder="Votre ville" /></div>
+        <div class="form-group">
+          <label data-i18n="form_parfum">PARFUM CHOISI</label>
+          <select id="f-parfum" required>
+            <option value="">— Choisir un parfum —</option>
+            <optgroup label="🌸 Collection Femme">
+              <option>L'Impératrice (Dolce & Gabbana)</option>
+              <option>Delina (Parfums de Marly)</option>
+              <option>Burberry Her (Burberry)</option>
+              <option>Prada Paradoxe (Prada)</option>
+              <option>Narciso Rodriguez for Her</option>
+              <option>Wicked (Victoria's Secret)</option>
+              <option>J'adore (Dior)</option>
+              <option>Libre (YSL)</option>
+              <option>Black Opium (YSL)</option>
+              <option>L'Interdit (Givenchy)</option>
+              <option>Born in Roma (Valentino)</option>
+            </optgroup>
+            <optgroup label="🪐 Collection Unisexe">
+              <option>Kirkè (Tiziana Terenzi)</option>
+              <option>Baccarat Rouge 540 (MFK)</option>
+              <option>Vert Malachite (Armani Privé)</option>
+              <option>Rouge Malachite (Armani Privé)</option>
+            </optgroup>
+            <optgroup label="🪵 Collection Homme">
+              <option>Eros (Versace)</option>
+              <option>L'Homme (YSL)</option>
+              <option>1 Million (Paco Rabanne)</option>
+              <option>Le Beau (Jean Paul Gaultier)</option>
+              <option>Terre d'Hermès (Hermès)</option>
+              <option>Imagination (Louis Vuitton)</option>
+              <option>Boss Bottled (Hugo Boss)</option>
+              <option>Legend (Montblanc)</option>
+              <option>Born in Roma Uomo (Valentino)</option>
+            </optgroup>
+            <option>Pack × 4 — 250 DH</option>
+          </select>
+        </div>
+        <div class="form-group"><label data-i18n="form_qty">QUANTITÉ</label><input type="number" id="f-qty" min="1" value="1" required /></div>
+        <div class="form-group"><label data-i18n="form_msg">MESSAGE (OPTIONNEL)</label><textarea id="f-msg" placeholder="Adresse complète, instructions..."></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;text-align:center;" data-i18n="form_btn">ENVOYER LA COMMANDE</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo"><img src="images/logo.png" alt="ROOH" /></div>
+    <ul class="footer-links">
+      <li><a href="#femme" data-i18n="nav_femme">FEMME</a></li>
+      <li><a href="#homme" data-i18n="nav_homme">HOMME</a></li>
+      <li><a href="#unisex" data-i18n="nav_unisex">UNISEX</a></li>
+      <li><a href="#histoire" data-i18n="nav_histoire">NOTRE HISTOIRE</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">CONTACT</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/roohbysalma" target="_blank" class="social-link"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://wa.me/212718668861" target="_blank" class="social-link"><i class="ti ti-brand-whatsapp"></i></a>
+      <a href="mailto:roohbysalma@gmail.com" class="social-link"><i class="ti ti-mail"></i></a>
+    </div>
+  </div>
+  <div class="footer-legal" data-i18n="footer_legal">ROOH est une marque indépendante. Nos fragrances sont des créations inspirées des grandes maisons de parfumerie.</div>
+  <div class="footer-bottom" data-i18n="footer_copy">© 2026 ROOH BY SALMA — PARFUMS DE L'ÂME — TOUS DROITS RÉSERVÉS</div>
+</footer>
+
+<a href="https://wa.me/212718668861" target="_blank" class="whatsapp-float" title="Commander sur WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
