@@ -38,9 +38,9 @@ const products = {
 
 // ===== PHOTOS PRODUITS =====
 const collectionPhoto = {
-  femme: 'images/bottle-femme-blanc.jpg',
-  homme: 'images/bottle-homme-blue.jpg',
-  unisex: 'images/bottles-duo.jpg'
+  femme: 'bottle-femme-blanc.jpg',
+  homme: 'bottle-homme-blue.jpg',
+  unisex: 'bottles-duo.jpg'
 };
 
 // ===== RENDU CARTES =====
