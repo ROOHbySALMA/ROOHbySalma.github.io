@@ -40,7 +40,7 @@ const products = {
 const collectionPhoto = {
   femme: 'bottle-femme-blanc.jpg',
   homme: 'bottle-homme-blue.jpg',
-  unisex: 'bottles-duo.jpg'
+  unisex: 'bottle-femme-blanc.jpg'
 };
 
 // ===== RENDU CARTES =====
